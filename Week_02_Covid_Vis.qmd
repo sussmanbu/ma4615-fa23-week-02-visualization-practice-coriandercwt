@@ -1,0 +1,41 @@
+---
+title: "Week 02: COVID Visualization Activity"
+date: "September, 11 2023"
+author: "**`[[`**Your Name**`]]`**"
+---
+
+Today, we'll be working with a data set related to COVID.
+This data is based on data from the the [COVID Tracking Project](https://covidtracking.com/).
+I cleaned up this data and also added total populations from the 2020 for each of the relevant categories.
+Note, due to differences in the way race and ethnicity are encoded in the census as compared to the the COVID Tracking Project, the population counts for LatinX may be somewhat inaccurate.
+
+```{r load_data}
+library(tidyverse)
+load("CRDT Data.RData")
+ls()
+```
+
+I've include 4 different data sets.
+They all have the same data but have it represented in different ways.
+Try using the different data sets and see which ones are good for making which plots.
+
+
+```{r first_plot}
+ggplot(covid_data_count, aes(x = date, y = Cases)) + geom_point()
+```
+
+
+
+If you want to only look at a specific state, you can do it like this.
+For now, see what you can do just using `ggplot`.
+
+```{r}
+covid_data_count |> 
+  filter(state == "MA") |> 
+  ggplot(aes(x = date, y = Cases, color = race)) + geom_line()
+```
+
+1. Write code for a plot and describe what you observe?
+2. Are there any conclusions you can draw?
+3. What were you not able to do due to not having the R knowledge?
+4. What other data would be useful to better understand this data?
