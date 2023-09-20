@@ -14,8 +14,6 @@ devtools::install_github("r-lib/conflicted")
 library(tidyverse)
 load("CRDT Data.RData")
 ls()
-library(ggplot2)
-library(ggthemes) 
 
 ```
 
@@ -26,23 +24,13 @@ Try using the different data sets and see which ones are good for making which p
 
 ```{r first_plot}
 ggplot(covid_data_count, aes(x = date, y = Cases)) + geom_point()
-filtered_data1 <- subset(covid_data_count, race != "Total")
-ggplot(filtered_data1, aes(x = date, y = Cases, color = race)) +
-  geom_point(alpha = 0.5) +
-  scale_color_colorblind()
 
 ggplot(covid_data_long, aes(x = date, y = count)) + geom_point()
-filtered_data2 <- subset(covid_data_long, race != "Total")
-ggplot(filtered_data2, aes(x = date, y = count, color = race)) +
-  geom_point(alpha = 0.5) +
-  scale_color_colorblind()
 
 ggplot(covid_data_orig, aes(x = Date, y = Cases_Total)) + geom_point()
 
 ggplot(covid_data_race, aes(x = date, y = Total_count)) + geom_point()
-ggplot(covid_data_race, aes(x = date, y = Total_count, color = count_type)) +
-  geom_point(alpha = 0.5) +
-  scale_color_colorblind()
+
 ```
 
 
