@@ -10,9 +10,13 @@ I cleaned up this data and also added total populations from the 2020 for each o
 Note, due to differences in the way race and ethnicity are encoded in the census as compared to the the COVID Tracking Project, the population counts for LatinX may be somewhat inaccurate.
 
 ```{r load_data}
+devtools::install_github("r-lib/conflicted")
 library(tidyverse)
 load("CRDT Data.RData")
 ls()
+library(ggplot2)
+library(ggthemes) 
+
 ```
 
 I've include 4 different data sets.
