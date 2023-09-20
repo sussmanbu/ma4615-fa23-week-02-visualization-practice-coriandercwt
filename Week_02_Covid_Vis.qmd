@@ -1,7 +1,7 @@
 ---
-title: "Week 02: COVID Visualization Activity"
-date: "September, 11 2023"
+title: "Week 03 `dplyr` Activity"
 author: "Wenting Chen"
+format: gfm
 ---
 
 Today, we'll be working with a data set related to COVID.
@@ -10,11 +10,8 @@ I cleaned up this data and also added total populations from the 2020 for each o
 Note, due to differences in the way race and ethnicity are encoded in the census as compared to the the COVID Tracking Project, the population counts for LatinX may be somewhat inaccurate.
 
 ```{r load_data}
-devtools::install_github("r-lib/conflicted")
 library(tidyverse)
 load("CRDT Data.RData")
-ls()
-
 ```
 
 I've include 4 different data sets.
